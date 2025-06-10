@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="border-t bg-background/50 backdrop-blur-sm">
       <div className="container px-4 py-8 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
             <h3 className="text-lg font-semibold mb-4">Uwera Irakoze Aline</h3>
             <p className="text-muted-foreground mb-4">
@@ -35,12 +35,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link
+                {/* <Link
                   href="/#experience"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Experience
-                </Link>
+                </Link> */}
               </li>
               <li>
                 <Link
@@ -57,7 +57,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Connect</h3>
             <div className="flex space-x-4">
               <Link
-                href="https://github.com"
+                href="https://github.com/alineuwera"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -66,7 +66,7 @@ export default function Footer() {
                 <Github className="h-5 w-5" />
               </Link>
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/uwera-irakoze-aline-514a242a6/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -84,7 +84,7 @@ export default function Footer() {
                 <Twitter className="h-5 w-5" />
               </Link>
               <Link
-                href="mailto:contact@example.com"
+                href="uwerairakozealine@gmail.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Email"
               >

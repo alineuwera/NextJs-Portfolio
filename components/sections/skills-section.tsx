@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { TabsContent, Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Progress } from "@/components/ui/progress";
 import SectionHeading from "@/components/ui/section-heading";
 
 // Skill categories and items
@@ -19,6 +18,9 @@ const skillCategories = [
       { name: "Next.js", level: 80 },
       { name: "Tailwind CSS", level: 90 },
       { name: "UX/UI Design", level: 75 },
+      { name: "Figma", level: 65 },
+      { name: "Framer Motion", level: 70 }, 
+      { name: "React Native", level: 65 },
     ],
   },
   {
@@ -28,9 +30,8 @@ const skillCategories = [
       { name: "Node.js", level: 85 },
       { name: "Express.js", level: 80 },
       { name: "MongoDB", level: 75 },
-      { name: "PostgreSQL", level: 70 },
-      { name: "GraphQL", level: 65 },
       { name: "RESTful APIs", level: 85 },
+      { name: "Firebase", level: 75 } 
     ],
   },
   {
@@ -38,11 +39,10 @@ const skillCategories = [
     label: "Tools & Others",
     skills: [
       { name: "Git & GitHub", level: 90 },
-      { name: "Docker", level: 70 },
-      { name: "AWS", level: 65 },
       { name: "Testing (Jest/RTL)", level: 75 },
-      { name: "CI/CD", level: 70 },
-      { name: "Agile/Scrum", level: 85 },
+      { name: "Vercel", level: 80 },
+      { name: "VS Code", level: 95 },
+      { name: "Postman", level: 85 }
     ],
   },
 ];
@@ -97,32 +97,30 @@ export default function SkillsSection() {
                         : { opacity: 0, y: 20 }
                     }
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="space-y-2"
+                    className="space-y-3"
                   >
                     <div className="flex justify-between items-center">
                       <span className="font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">
+                      <span className="text-sm text-muted-foreground font-semibold">
                         {skill.level}%
                       </span>
                     </div>
-                    <Progress
-                      value={0}
-                      className="h-2"
-                      indicatorClassName="bg-gradient-to-r from-blue-500 to-blue-700"
-                    />
-                    <motion.div
-                      initial={{ width: "0%" }}
-                      animate={
-                        inView && activeTab === category.id
-                          ? { width: `${skill.level}%` }
-                          : { width: "0%" }
-                      }
-                      transition={{ duration: 1, delay: index * 0.1 + 0.3 }}
-                      className="h-2 bg-gradient-to-r from-blue-500 to-violet-500 rounded-full -mt-2"
-                      style={{
-                        width: `${skill.level}%`,
-                      }}
-                    />
+                    <div className="relative">
+                      <div className="w-full bg-muted rounded-full h-3">
+                        <motion.div
+                          initial={{ width: "0%" }}
+                          animate={
+                            inView && activeTab === category.id
+                              ? { width: `${skill.level}%` }
+                              : { width: "0%" }
+                          }
+                          transition={{ duration: 1.2, delay: index * 0.1 + 0.3, ease: "easeOut" }}
+                          className="h-3 bg-gradient-to-r from-blue-500 to-violet-500 rounded-full relative overflow-hidden"
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                        </motion.div>
+                      </div>
+                    </div>
                   </motion.div>
                 ))}
               </TabsContent>
@@ -131,7 +129,7 @@ export default function SkillsSection() {
         </div>
 
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-          {["React", "TypeScript", "Node.js", "MongoDB", "Next.js", "Tailwind", "PostgreSQL", "AWS"].map(
+          {["React", "TypeScript", "Node.js", "MongoDB", "Next.js", "Tailwind", "Firebase", "Figma"].map(
             (tech, index) => (
               <motion.div
                 key={tech}

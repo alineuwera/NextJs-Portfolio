@@ -7,7 +7,14 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -30,13 +37,13 @@ const contactInfo = [
     icon: <Mail className="h-6 w-6 text-primary" />,
     title: "Email",
     value: "uwerairakozealine@gmail.com",
-    link: "mailto:contact@example.com",
+    link: "email:uwerairakozealine@gmail.com",
   },
   {
     icon: <Phone className="h-6 w-6 text-primary" />,
     title: "Phone",
     value: "+250 791 995 800",
-    link: "tel:+11234567890",
+    link: "tel:+250791995800",
   },
   {
     icon: <MapPin className="h-6 w-6 text-primary" />,
@@ -64,21 +71,31 @@ export default function ContactSection() {
     },
   });
 
-  function onSubmit(data: FormValues) {
+  // ✅ Updated async form submission
+  async function onSubmit(data: FormValues) {
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log(data);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mzzgeoep", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setIsSubmitSuccessful(true);
+        form.reset();
+        setTimeout(() => setIsSubmitSuccessful(false), 3000);
+      } else {
+        console.error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Error submitting form", error);
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitSuccessful(true);
-      form.reset();
-      
-      // Reset success message after 3 seconds
-      setTimeout(() => {
-        setIsSubmitSuccessful(false);
-      }, 3000);
-    }, 1000);
+    }
   }
 
   return (
@@ -91,6 +108,7 @@ export default function ContactSection() {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
@@ -104,17 +122,14 @@ export default function ContactSection() {
 
             <div className="space-y-4 pt-4">
               {contactInfo.map((item, index) => (
-                <Card 
-                  key={index}
-                  className="border-border/40 bg-card/60 backdrop-blur-sm"
-                >
+                <Card key={index} className="border-border/40 bg-card/60 backdrop-blur-sm">
                   <CardContent className="p-4 flex items-center gap-4">
                     <div>{item.icon}</div>
                     <div>
                       <div className="text-sm font-medium">{item.title}</div>
                       {item.link ? (
-                        <a 
-                          href={item.link} 
+                        <a
+                          href={item.link}
                           className="text-muted-foreground hover:text-primary transition-colors"
                         >
                           {item.value}
@@ -129,6 +144,7 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
+          {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
@@ -198,8 +214,8 @@ export default function ContactSection() {
                       )}
                     />
                     <div className="flex justify-end">
-                      <Button 
-                        type="submit" 
+                      <Button
+                        type="submit"
                         disabled={isSubmitting}
                         className="w-full sm:w-auto"
                       >

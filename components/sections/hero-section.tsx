@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import uweraImage from "@/app/image/aline-uwera.jpg"
+import uweraImage from "@/app/image/aline-uwera.jpg";
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,14 +50,18 @@ export default function HeroSection() {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Download Resume <Download className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </div>
               <div className="flex items-center gap-4 pt-2">
                 <Link
-                  href="https://github.com"
+                  href="https://github.com/alineuwera"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
@@ -66,7 +70,7 @@ export default function HeroSection() {
                   <Github className="h-6 w-6" />
                 </Link>
                 <Link
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/uwera-irakoze-aline-514a242a6/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
