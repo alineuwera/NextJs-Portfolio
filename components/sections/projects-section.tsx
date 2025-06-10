@@ -31,7 +31,48 @@ const projects = [
     githubUrl: "https://github.com/alineuwera/Personal-Journal-App",
     featured: true,
   },
+  {
+    id: 3,
+    title: "Product List Cart App",
+    description: "An e-commerce product list app with cart functionality. Features a product grid, cart management, and responsive design using React and Tailwind CSS.",
+    image: "https://images.pexels.com/photos/5632396/pexels-photo-5632396.jpeg?auto=compress&cs=tinysrgb&w=800",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    liveUrl: "https://product-list-cart.vercel.app/",
+    githubUrl: "https://github.com/alineuwera/Product-List-Cart",
+    featured: true,
+  },
+  {
+    id: 4,
+    title: "User Directory App",
+    description: "A user management app displaying a list of users fetched from an API. Includes user detail views, adding and removing users, and form validation using TypeScript and React Router.",
+    image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800",
+    tags: ["React", "TypeScript", "React Router"],
+    liveUrl: "https://user-directory-app.vercel.app/",
+    githubUrl: "https://github.com/alineuwera/User-Directory-App",
+    featured: true,
+  },
+  {
+    id: 5,
+    title: "Favorite User Picker App",
+    description: "A simple app to fetch GitHub users and pick your favorite. Features local storage saving, favorites list, and clean card-based layout built with React.",
+    image: "https://images.pexels.com/photos/1181357/pexels-photo-1181357.jpeg?auto=compress&cs=tinysrgb&w=800",
+    tags: ["React", "TypeScript", "Local Storage"],
+    liveUrl: "https://favorite-user-picker.vercel.app/",
+    githubUrl: "https://github.com/alineuwera/Favorite-User-Picker",
+    featured: true,
+  },
+  {
+    id: 6,
+    title: "GitHub User Search App",
+    description: "A search app to look up GitHub profiles by username. Shows user info, public repos, followers, and more with a dark/light theme toggle. Built with React and Tailwind CSS.",
+    image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800",
+    tags: ["React", "Tailwind CSS", "GitHub API"],
+    liveUrl: "https://github-user-search-app.vercel.app/",
+    githubUrl: "https://github.com/alineuwera/GitHub-User-Search-App",
+    featured: true,
+  },
 ];
+
 
 export default function ProjectsSection() {
   const [ref, inView] = useInView({
@@ -119,7 +160,7 @@ export default function ProjectsSection() {
 
         <div className="mt-16 text-center">
           <Button variant="outline" size="lg" className="group" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/alineuwera" target="_blank" rel="noopener noreferrer">
               View More Projects 
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>

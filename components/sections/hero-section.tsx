@@ -51,7 +51,7 @@ export default function HeroSection() {
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link
-                    href="/resume.pdf"
+                    href="/UWERA_IRAKOZE_Aline_CV.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
