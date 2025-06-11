@@ -29,7 +29,7 @@ export default function HeroSection() {
             <div className="space-y-6">
               <div className="inline-flex items-center px-3 py-1 rounded-full border bg-background/50 backdrop-blur-sm text-sm">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-500 font-medium">
-                  Full Stack Developer
+                  Frontend & Mobile developer
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
@@ -50,18 +50,17 @@ export default function HeroSection() {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link
+                  <a
                     href="/UWERA_IRAKOZE_Aline_CV.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    download
                   >
                     Download Resume <Download className="ml-2 h-4 w-4" />
-                  </Link>
+                  </a>
                 </Button>
               </div>
               <div className="flex items-center gap-4 pt-2">
                 <Link
-                  href="https://github.com/alineuwera"
+                  href="https://github.com/alineuwera" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"

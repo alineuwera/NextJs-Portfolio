@@ -3,29 +3,39 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Code, Laptop, Lightbulb, Users } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import SectionHeading from "@/components/ui/section-heading";
 
 const services = [
   {
     icon: <Code className="h-10 w-10 text-blue-500" />,
     title: "Web Development",
-    description: "Building responsive, accessible websites and web applications with modern technologies.",
+    description:
+      "Building responsive, accessible websites and web applications with modern technologies.",
   },
   {
     icon: <Laptop className="h-10 w-10 text-green-500" />,
     title: "Frontend Development",
-    description: "Creating intuitive user interfaces with React, Next.js, and modern CSS frameworks.",
+    description:
+      "Creating intuitive user interfaces with React, Next.js, and modern CSS frameworks.",
   },
   {
     icon: <Lightbulb className="h-10 w-10 text-amber-500" />,
     title: "UX/UI Design",
-    description: "Designing user-centered experiences that balance aesthetics and functionality.",
+    description:
+      "Designing user-centered experiences that balance aesthetics and functionality.",
   },
   {
     icon: <Users className="h-10 w-10 text-purple-500" />,
     title: "Team Collaboration",
-    description: "Working effectively in agile teams to deliver high-quality software solutions.",
+    description:
+      "Working effectively in agile teams to deliver high-quality software solutions.",
   },
 ];
 
@@ -75,19 +85,19 @@ export default function AboutSection() {
             <h3 className="text-2xl font-bold mb-4">Who I Am</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Hello! I&apos;m Uwera Irakoze Aline, a passionate full-stack developer with a 
-                focus on creating exceptional digital experiences. I enjoy building everything 
-                from small business sites to rich interactive web applications.
+                Hello! I'm Uwera Irakoze Aline, a passionate frontend and mobile
+                developer with a focus on creating exceptional digital
+                experiences. I enjoy building everything from small business
+                sites to rich, interactive web and mobile applications.
               </p>
               <p>
-                My journey in web development began during my university years, and since then, 
-                I&apos;ve been constantly learning and improving my skills to stay at the forefront 
-                of the ever-evolving tech landscape.
+                I'm constantly learning and improving my skills to stay at the forefront of the ever-evolving tech landscape.
               </p>
               <p>
-                When I&apos;m not coding, you can find me exploring new technologies, contributing 
-                to open-source projects, or mentoring aspiring developers. I believe in writing clean, 
-                maintainable code and creating intuitive user experiences.
+                When I&apos;m not coding, you can find me exploring new
+                technologies, contributing to open-source projects, or mentoring
+                aspiring developers. I believe in writing clean, maintainable
+                code and creating intuitive user experiences.
               </p>
             </div>
           </motion.div>

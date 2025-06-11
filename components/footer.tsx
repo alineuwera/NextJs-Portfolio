@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="border-t bg-background/50 backdrop-blur-sm">
       <div className="container px-4 py-8 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div>
             <h3 className="text-lg font-semibold mb-4">Uwera Irakoze Aline</h3>
             <p className="text-muted-foreground mb-4">
